@@ -1,0 +1,42 @@
+//Mixin for box settings
+@mixin box-settings($width:100%, $height:auto, $align:center) {
+    width: $width;
+    height: $height;
+    text-align: $align;
+}
+
+//Mixin for headings
+@mixin heading-settings ($color: $gray, $font-size:2em, $font-weight: 400 ){
+    color: $color;
+    font-weight: $font-weight;
+    font-size: $font-size;
+}
+
+//Mixin for divs in footer
+@mixin social-media-pos($key, $val, $pos:-38px) {
+    @if $key == 'one'{
+        background:url($val) 0 0;
+    }
+
+    @if $key == 'two'{
+        background:url($val) ($pos) 0;
+    }
+
+    @if $key == 'three'{
+        background:url($val) ($pos * 2) 0;
+    }
+
+    @if $key == 'four'{
+        background:url($val) ($pos * 3) 0;
+    }
+
+}
+
+//Mixin for media queries
+@mixin screensize($args...) {
+    @if length($args) == 1 {
+        @media (max-width: nth($args, 1)) {
+            @content;
+        }
+    }
+}

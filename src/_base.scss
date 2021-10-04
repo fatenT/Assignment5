@@ -1,0 +1,136 @@
+body    {
+    font-family: $body-font;
+    font-size: 1em;
+    line-height: 2em;
+    background: url($body-img) $white repeat-x;
+    margin: 0;
+}
+
+main    {
+    width: 940px;
+    margin: 0 auto;
+    padding: 0 10px;
+
+    @include screensize(959px) {
+        width: 768px;
+    }
+    @include screensize(767px) { 
+        width: 460px;
+    }
+    @include screensize(459px) { 
+        width: 300px;
+    }
+}
+
+figure  {
+    background:url($figure-img) no-repeat 0 50px;
+    float:left;
+    display:block;
+    margin:0;
+    @include box-settings(400px, 190px);
+
+    @include screensize(959px) {
+        width: inherit;
+        height: 140px;
+        float: none;
+        background-position: center;
+    }
+    @include screensize(459px) { 
+        background-size: contain;
+        height: 100px;
+    }
+}
+
+header  {
+    //width: inherit;
+    clear: both;
+    text-align: center;
+    padding-top: 40px;
+    @include box-settings(inherit);
+
+    img  {
+        max-width: 100%;
+        height: auto;
+
+        @include screensize(767px) { 
+            margin-bottom: 100px;
+        }
+        @include screensize(459px) { 
+            margin-bottom: 80px;
+        }
+    }
+
+    h1   {
+        line-height: 0;
+        @include heading-settings($orange, 4em, 100);
+
+        @include screensize(959px) {
+            font-size: 3em;
+        }
+        @include screensize(767px) { 
+            font-size: 2em;
+        }
+    }
+
+    h1:first-child   {
+        @include screensize(459px) { 
+            font-size: 1.4em;
+            margin-bottom: 20px;
+        }
+    }
+
+
+    h2   {
+        line-height: 0;
+        margin-bottom: 70px;
+        @include heading-settings($white, 2.5em, 900);
+
+        @include screensize(959px) {
+            font-size: 1.5em;
+        }
+        @include screensize(767px) { 
+            font-size: 1em;
+        }
+        @include screensize(459px) { 
+            font-size: 1.4em;
+        }
+    }
+
+    h3   {
+        line-height: 0;
+        margin-bottom: 50px;
+        @include heading-settings();
+
+        @include screensize(767px) { 
+            font-size: 1.5em;
+        }
+        @include screensize(459px) { 
+            @include heading-settings($white, 1em, '');
+        }
+    }
+}
+
+footer  {
+    background: $dark-gray;
+    //text-align: center;
+    color: $white;
+    padding-top: 50px;
+    @include box-settings(100%, 120px);
+
+    @include screensize(459px) {
+        text-align: center;
+    }
+
+    p, img {
+        @include screensize(459px) {
+            float: none;
+            margin: 0;
+        }
+    }
+}
+
+select {
+    @include screensize(459px) { 
+        width: 95%;
+    }
+}
